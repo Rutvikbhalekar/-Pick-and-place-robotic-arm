@@ -1,0 +1,200 @@
+Our Project code it will be here now:-
+Programming:
+const int m11 16;
+const int m12 17;
+const int m21 18;
+const int m22 19;
+const int m31 14;
+const int m32 15;
+const int m41 2;
+const int m42 3;
+const int m51 4;
+const int m52 5;
+const int m61 6;
+const int m62 7;
+const int m71 0;
+const int m72 1;
+const int D0 9;
+const int D1 10;
+const int D2 11;
+const int D3 = 12;
+void forward()
+{
+digitalWrite(m11, HIGH);
+digitalWrite(m12, LOW);
+digitalWrite(m21, HIGH);
+digitalWrite(m22, LOW);
+}
+void backward()
+{
+digitalWrite(m11, LOW);
+digitalWrite(m12, HIGH);
+digitalWrite(m21, LOW);
+digitalWrite(m22, HIGH);
+}
+void left()
+{
+digitalWrite(m11, HIGH);
+digitalWrite(m12, LOW);
+digitalWrite(m21, LOW);
+
+digitalWrite(m22, HIGH);
+
+}
+
+void right()
+
+{
+
+digitalWrite(m11, LOW);
+
+digitalWrite(m12, HIGH);
+
+digitalWrite(m21, HIGH);
+
+digitalWrite(m22, LOW);
+
+}
+
+void pick()
+
+{
+
+digitalWrite(m41, HIGH);
+
+digitalWrite(m42, LOW);
+
+}
+
+void place()
+{
+digitalWrite(m41, LOW);
+digitalWrite(m42, HIGH);
+}
+void up()
+
+{
+
+digitalWrite(m51, HIGH);
+
+digitalWrite(m52, LOW);
+
+}
+
+void down()
+
+{
+
+digitalWrite(m11, LOW);
+
+digitalWrite(m12, HIGH);
+
+}
+
+void aforward()
+
+{
+
+digitalWrite(m21, HIGH);
+
+digitalWrite(m22, LOW);
+
+}
+
+void abackward()
+
+{
+digitalWrite(m11, LOW);
+digitalWrite(m12, HIGH);
+}
+void aleft()
+{
+
+digitalWrite(m11, HIGH);
+
+digitalWrite(m12, LOW);
+
+}
+
+void aright()
+
+{
+
+digitalWrite(m11, LOW);
+digitalWrite(m12, HIGH);
+}
+void clean()
+{
+digitalWrite(m11, LOW);
+digitalWrite(m12, HIGH);
+}
+void nclean()
+{
+digitalWrite(m21, HIGH);
+digitalWrite(m22, LOW);
+}
+void Stop()
+{
+digitalWrite(m11, LOW);
+
+digitalWrite(m12, LOW);
+digitalWrite(m21, LOW);
+digitalWrite(m22, LOW);
+}
+void setup()
+{
+pinMode(D0, INPUT);
+pinMode(D1, INPUT);
+pinMode(D2, INPUT);
+pinMode(D3, INPUT);
+pinMode(m11, OUTPUT);
+pinMode(m12, OUTPUT);
+pinMode(m21, OUTPUT);
+pinMode(m22, OUTPUT);
+pinMode(m31, OUTPUT);
+pinMode(m32, OUTPUT);
+pinMode(m41, OUTPUT);
+pinMode(m42, OUTPUT);
+pinMode(m51, OUTPUT);
+pinMode(m52, OUTPUT);
+
+pinMode(m61, OUTPUT);
+pinMode(m62, OUTPUT);
+pinMode(m71, OUTPUT);
+pinMode(m72, OUTPUT);
+}
+void loop()
+{
+int temp1=digitalRead(D0);
+int temp2=digitalRead(D1);
+int temp3=digitalRead(D2);
+int temp4=digitalRead(D3);
+if(temp1==0 && temp2==0 && temp3==0 && temp4==1)
+forward();
+else if(temp1==0 && temp2==0 && temp3==1 && temp4==0)
+left();
+else if(temp1==0 && temp2==1 && temp3==1 && temp4==0)
+right();
+else if(temp1==0 && temp2==1 && temp3==0 && temp4==1)
+backward();
+else if(temp1==0 && temp2==0 && temp3==0 && temp4==0)
+pick();
+
+if(temp1==0 && temp2==0 && temp3==0 && temp4==1)
+
+forward();
+
+else if(temp1==0 && temp2==0 && temp3==1 && temp4==0)
+
+left();
+
+else if(temp1==0 && temp2==1 && temp3==1 && temp4==0)
+
+right();
+
+else if(temp1==0 && temp2==1 && temp3==0 && temp4==1)
+
+backward();
+else if(temp1==0 && temp2==0 && temp3==0 && temp4==0)
+Stop();
+}
